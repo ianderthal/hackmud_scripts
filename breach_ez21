@@ -1,0 +1,11 @@
+function(c, a) {
+    let commands = ['unlock', 'open', 'release'];
+
+    for (command of commands) {
+        out = a.target.call({ EZ_21: command })
+        if(!out.includes('is not the correct unlock command')) break
+    }
+
+    return out
+
+}
